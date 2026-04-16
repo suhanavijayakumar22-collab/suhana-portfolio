@@ -1,3 +1,19 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+/* When the .dark class is present on the html tag */
+.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #f5f5f5;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease; /* Makes the switch smooth */
+}
 .App {
   text-align: center;
 }
@@ -34,5 +50,66 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Base Styles & Mobile-First Approach */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  max-width: 100%; /* Ensures it doesn't overflow on small screens */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg-color);
+}
+
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* Large on mobile, we can scale up later */
+  margin-bottom: 10px;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 40px 0;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 768px) {
+  .app-container {
+    max-width: 1000px;
+    margin: 0 auto; /* Centers the whole page on large screens */
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
   }
 }
