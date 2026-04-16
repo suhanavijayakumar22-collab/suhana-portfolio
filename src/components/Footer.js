@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="social-links">
-        <a href="https://github.com/suhavijay" target="_blank" rel="noreferrer">
+        <a href="https://github.com/suhanavijayakumar22-collab" target="_blank" rel="noreferrer">
           <FaGithub size={24} />
         </a>
         <a href="https://www.linkedin.com/in/suhana-vijayakumar-501ba4336/?skipRedirect=true" target="_blank" rel="noreferrer">
