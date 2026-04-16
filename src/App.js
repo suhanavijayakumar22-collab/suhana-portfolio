@@ -3,6 +3,9 @@ import './App.css';
 import { useDarkMode } from './hooks/useDarkMode';
 import { Sun, Moon } from 'lucide-react'; // Cool icons for your toggle
 
+import About from './sections/About'; 
+import Footer from './components/Footer';
+
 function App() {
   const [theme, toggleTheme] = useDarkMode();
 
@@ -25,16 +28,9 @@ function App() {
         <div className="badge">React Developer</div>
       </section>
 
-      {/* Main Content Area (For future sections) */}
-      <main className="content">
-        <p>Projects and About sections coming soon...</p>
-      </main>
+<About />
 
-      {/* Footer Section */}
-      <footer className="footer">
-        <h3>Socials</h3>
-        <p>© 2026 | Built with React</p>
-      </footer>
+      <Footer /> 
     </div>
   );
 }

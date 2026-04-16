@@ -113,3 +113,32 @@ body {
     font-size: 4rem;
   }
 }
+
+.about-section {
+  padding: 50px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--text-color);
+  padding-left: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  transition: transform 0.2s;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+}
