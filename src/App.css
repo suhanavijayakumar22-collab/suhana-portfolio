@@ -115,6 +115,7 @@ body {
 }
 
 .about-section {
+
   padding: 50px 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -141,4 +142,223 @@ body {
 
 .social-links a:hover {
   transform: translateY(-5px); /* Subtle lift effect */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Reactive sizing */
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.project-card {
+  background: var(--card-bg, #f9f9f9);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: left;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.dark .project-card {
+  --card-bg: #2a2a2a;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.tags {
+  margin: 15px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  background: #007bff;
+  color: white;
+  border-radius: 20px;
+}
+
+.slider-container {
+  width: 100%;
+  height: 400px; /* Base height for mobile */
+  position: relative;
+  overflow: hidden; /* Important for the sliding effect */
+  margin: 40px 0;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-content {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column; /* Mobile-first: Stack text under image */
+  background: white; /* Card feel */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.dark .slide-content { background: #222; } /* Dark mode colorful support */
+
+.slide-image {
+  width: 100%;
+  height: 60%; /* Mobile image percentage */
+  object-fit: cover; /* Ensures colorful images don't stretch */
+}
+
+.slide-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.slide-text h3 { color: #007bff; margin-bottom: 5px; } /* Vibrant Primary Color */
+.location { font-size: 0.9rem; color: #555; }
+.info { margin-top: 10px; line-height: 1.4; }
+
+/* Desktop Adjustments for colorful spacing */
+@media (min-width: 768px) {
+  .slider-container { height: 500px; }
+  .slide-content { flex-direction: row; } /* Horizontal on desktop */
+  .slide-image { width: 50%; height: 100%; }
+  .slide-text { width: 50%; padding: 40px; }
+  .slide-text h3 { font-size: 2.2rem; }
+}
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects-section {
+  background: linear-gradient(180deg, transparent, rgba(0, 123, 255, 0.05));
+  border-radius: 50px 50px 0 0;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.journey-card {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-end; /* Puts text at the bottom */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  cursor: default;
+}
+
+.card-overlay {
+  padding: 30px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.card-overlay h3 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.skill-chip {
+  padding: 12px 28px;
+  background: white !important; /* Force the background to start white */
+  color: #007bff !important;     /* Force the text to start blue */
+  border: 2px solid #007bff !important; 
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Ensure the hover state also wins the battle */
+.skill-chip:hover {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+
+/* Dark mode support for the background */
+.dark .skills-section {
+  background-color: #1a1a1a;
+}
+
+.skills-section {
+  padding: 100px 20px; /* More padding fills the vertical whitespace */
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-title {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-chip {
+  padding: 12px 28px;
+  background: transparent;
+  color: #007bff; /* Start with blue text */
+  border: 2px solid #007bff; /* Blue outline */
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease, border-color 0.2s ease; /* Smooth transition for the hover */
+}
+
+/* Dark mode adjustment so the blue pops against the dark background */
+.dark .skill-chip {
+  border-color: #339cff;
+  color: #339cff;
+}
+
+.app-container {
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 40px 40px; /* Creates a subtle dot-grid background */
+}
+
+.dark .app-container {
+  background-image: radial-gradient(#333 1px, transparent 1px);
 }

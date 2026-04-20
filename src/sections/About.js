@@ -1,23 +1,42 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import sboaImg from '../assets/school.jpeg';
+import ssnImg from '../assets/college.jpeg';
+import danceImg from '../assets/dance.jpeg';
 
 const About = () => {
+  const journey = [
+    { title: "SBOA Global", text: "Alumna & Head Girl", img: sboaImg },
+    { title: "SSN College", text: "M.Tech Student", img: ssnImg },
+    { title: "Hobbies", text: "Bharatanatyam & Art", img: danceImg }
+  ];
+
   return (
-    <section className="about-section" id="about">
-      <h2>My Journey</h2>
-      <div className="timeline">
-        <div className="timeline-item">
-          <h3>M.Tech Student</h3>
-          <p>SSN College of Engineering, Kalavakkam</p>
+    <section className="about-section">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h2>My Journey</h2>
+        
+        <div className="journey-grid">
+          {journey.map((item, index) => (
+            <motion.div 
+              key={index}
+              className="journey-card"
+              style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(${item.img})` }}
+              whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
+            >
+              <div className="card-overlay">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        <div className="timeline-item">
-          <h3>Alumna & Former Head Girl</h3>
-          <p>SBOA Global School</p>
-        </div>
-      </div>
-      <div className="hobbies">
-        <h3>Beyond the Code</h3>
-        <p>Bharatanatyam, freestyle, singing.</p>
-      </div>
+      </motion.div>
     </section>
   );
 };
